@@ -67,17 +67,53 @@ if (navigator.mediaDevices.getUserMedia) {
         const blob = new Blob(chunks, {'type' : 'audio/wav'});
         chunks = [];
 
-        // download link for audio
-        const audioURL = URL.createObjectURL(blob);
+        sendData(blob);
 
-        // download audio file (testing purposes)
+        function sendData(data) {
+
+          var xhr=new XMLHttpRequest();
+
+          var fd=new FormData();
+          fd.append("audio_data",data, "output.wav");
+          xhr.open("POST","https://master-mote-338304.uc.r.appspot.com/uploadAudio",true);
+          xhr.send(fd);
+
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+              resultats = this.responseText;
+              console.log(resultats);
+              var results=JSON.parse(resultats);
+              console.log(typeof results);
+              getTranscript(results.upload_url);
+            }
+          }
+        }
+
+        // get speech-to-text transcript using AssemblyAI API
+        function getTranscript(url){
+          fetch('https://master-mote-338304.uc.r.appspot.com/getTranscript?url='+url, {
+          method: 'POST', // or 'PUT'
+          })
+          .then(response => response.json())
+          .then(data => {
+          console.log('Success:', data); //this data object is the returned json from assemblyAI. data.text has transcript,
+                                          //would then send to grammarapi
+          })
+          .catch((error) => {
+          console.error('Error:', error);
+          });
+        }
+
+        // local download of audio file for testing:
+
+        /*const audioURL = URL.createObjectURL(blob);
         var audioElem = document.createElement("a");
         document.body.appendChild(audioElem);
         audioElem.href = audioURL;
         audioElem.download = "test.wav";
         audioElem.style = "display: none";
         audioElem.click();
-        window.URL.revokeObjectURL(blob);
+        window.URL.revokeObjectURL(blob);*/
       }
     }
 
