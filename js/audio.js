@@ -1,16 +1,17 @@
 const record = document.querySelector('#record');
 const stop = document.querySelector('#stop');
-const tryAgain = document.querySelector('#try-again')
+const tryAgain = document.querySelector('#try-again');
+const check = document.querySelector('#check');
 
 stop.disabled = true;
+tryAgain.disabled = true;
 
 // audio collection
 // success in obtaining user media (microphone)
 if (navigator.mediaDevices.getUserMedia) {
-    console.log('getUserMedia supported');
+    console.log("Microphone access allowed.");
   
-    const constraints = { audio: true };
-    let chunks = [];
+    let chunks = []; // for storing audio stream
   
     let onSuccess = function(stream) {
       const mediaRecorder = new MediaRecorder(stream);
@@ -19,10 +20,11 @@ if (navigator.mediaDevices.getUserMedia) {
       record.onclick = function() {
         mediaRecorder.start();
         console.log(mediaRecorder.state);
-        console.log("recorder started");
+        console.log("Starting recording...");
         record.style.background = "red";
   
         stop.disabled = false;
+        tryAgain.disabled = true;
         record.disabled = true;
       }
       
@@ -30,12 +32,17 @@ if (navigator.mediaDevices.getUserMedia) {
       stop.onclick = function() {
         mediaRecorder.stop();
         console.log(mediaRecorder.state);
-        console.log("recorder stopped");
+        console.log("Stopping recording.");
         record.style.background = "";
         record.style.color = "";
   
         stop.disabled = true;
-        record.disabled = false;
+        record.disabled = true;
+        tryAgain.disabled = false;
+      }
+
+      tryAgain.onclick = function() {
+
       }
 
       // stream recorded audio in chunks
@@ -52,8 +59,6 @@ if (navigator.mediaDevices.getUserMedia) {
         // download link for audio
         const audioURL = URL.createObjectURL(blob);
 
-        console.log(audioURL); //testing purposes
-
         // download audio file
         var audioElem = document.createElement("a");
         document.body.appendChild(audioElem);
@@ -67,15 +72,16 @@ if (navigator.mediaDevices.getUserMedia) {
 
     // error in obtaining user media
     let onError = function(err) {
-      console.log('The following error occured: ' + err);
+      console.log("The following error occured: " + err);
     }
 
-    // prompt user for microphone access
-    navigator.mediaDevices.getUserMedia(constraints).then(onSuccess, onError);
+    // prompt user, promise
+    navigator.mediaDevices.getUserMedia({audio: true}).then(onSuccess, onError);
 }
 
+// failure to obtain mic access
 else {
-  console.log('getUserMedia not supported');
+  console.log("Microphone access blocked.");
 }
 
 
