@@ -70,7 +70,7 @@ if (navigator.mediaDevices.getUserMedia) {
 
         // upload audio to AssemblyAI
         function sendData(data) {
-          document.getElementById('transcript-text').innerHTML = ``;
+          document.getElementById('transcript-text').innerHTML = `<img src=../img/loading.gif id="loader">`;
           var xhr=new XMLHttpRequest();
           var fd=new FormData();
           fd.append("audio_data",data, "output.wav");
