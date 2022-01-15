@@ -20,6 +20,21 @@
         "question": "Are there any foods you cannot eat?"
     },
     {
+        "id": 5,
+        "category": "Food",
+        "question": "Do you prefer to eat at a restaurant or at home? Why?"
+    },
+    {
+        "id": 6,
+        "category": "Food",
+        "question": "What have you eaten so far today?"
+    },
+    {
+        "id": 7,
+        "category": "Food",
+        "question": "What kind of beverages do you usually drink?"
+    },
+    {
         "id": 1,
         "category": "Medical",
         "question": "How often do you exercise?"
@@ -40,9 +55,24 @@
         "question": "Do you take any medications?"
     },
     {
+        "id": 5,
+        "category": "Medical",
+        "question": "Do you go for regular medical check-ups?"
+    },
+    {
+        "id": 6,
+        "category": "Medical",
+        "question": "What are some things people can do to keep healthy?"
+    },
+    {
+        "id": 7,
+        "category": "Medical",
+        "question": "What are some ways to deal with stress?"
+    },
+    {
         "id": 1,
         "category": "Workplace",
-        "question": "Do you prefer to work alone or in a group?"
+        "question": "Do you prefer to work alone or in a group? Why?"
     },
     {
         "id": 2,
@@ -56,7 +86,57 @@
     },
     {
         "id": 4,
+        "category": "Workplace",
+        "question": "What do you like/dislike about your workplace?"
+    },
+    {
+        "id": 1,
         "category": "Home",
         "question": "What are your hobbies?"
+    },
+    {
+        "id": 2,
+        "category": "Home",
+        "question": "Can you describe each room of your house?"
+    },
+    {
+        "id": 3,
+        "category": "Home",
+        "question": "What does the outside of your house look like?"
+    },
+    {
+        "id": 4,
+        "category": "Home",
+        "question": "What do you think houses in the future will be like?"
+    },
+    {
+        "id": 5,
+        "category": "Home",
+        "question": "Can you describe each room of your house?"
+    },
+    {
+        "id": 1,
+        "category": "School",
+        "question": "What did you like and dislike about your school life?"
+    },
+    {
+        "id": 2,
+        "category": "School",
+        "question": "What was your favourite subject at school? Why?"
+    },
+    {
+        "id": 3,
+        "category": "School",
+        "question": "What are pros and cons of uniforms for school kids?"
+    },
+    {
+        "id": 4,
+        "category": "School",
+        "question": "When students behaved badly, how were they punished at your school?"
+    },
+    {
+        "id": 5,
+        "category": "School",
+        "question": "What is your best memory from middle school?"
     }
 ]
