@@ -6,31 +6,41 @@
     <link rel="stylesheet" href="https://bootswatch.com/5/cerulean/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./img/bird.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
     <title>GrammarParrot</title>
 </head>
 <body>
-  <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary text-left mb-4">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">GrammarParrot</a>
-        <div class="text-right" id="navbarColor01">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home
-                <span class="visually-hidden">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="learn.html">Learn More</a>
-            </li>
-          </ul>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary text-left mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img class="topbar-logo" src="img/bird.png" alt="logo" id="nav-logo"/>GrammarParrot</a>
+      <div class="text-right" id="navbarColor01">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="learn.html">Learn More</a>
+          </li>
+        </ul>
       </div>
-    </nav>
-    <h1 class=" text-center mb-4">GrammarParrot</h1>
+    </div>
+  </nav>
+  <div class="container">
+    
+    <div class="text-center">
+      <h1 class=" text-center mb-4"><a><img src="img/bird.png" alt="logo" id="main-logo"/><b>GrammarParrot</b></h1>
+    </div>
+  
     <div class="row">
       <div class="col-md-8 mx-auto">
         <form class="speech-input">
@@ -38,7 +48,7 @@
             <h4>Here's a question to help you get started:</h4>
             <label>Category:</label>
             <div class="input-group input-group-sm">
-              <select class="form-select form-select-lg form-control mb-3" id="category">
+              <select class="form-select form-select-sm form-control mb-3" id="category">
                 <option value="Food">Food</option>
                 <option value="Workplace">Workplace</option>
                 <option value="School">School</option>
@@ -57,7 +67,7 @@
               <ul class="text-left" id="card-body">
                 <li>Record yourself speaking by clicking the 'Record' button</li>
                 <li>Stop the recording by clicking 'Stop' </li>
-                <li>If you want to restart a recording, click 'Stop' then 'Try Again' to delete</li>
+                <li>If you want to restart a recording, click 'Stop' then click 'Try Again'</li>
                 <li>Record yourself speaking and press the 'Check' button to review your grammar!</li>
               </ul>
             </div>  
@@ -68,9 +78,8 @@
           </div>
         </form>
         <div id="transcript-section">
-          <div class="jumbotron" id="jumbotron">  <!--style="display:none"   ***Add back later-->
+          <div class="jumbotron" id="jumbotron" style="display:none">
             <h1 class="display-3" id="transcript-title">Here's what you said:</h1>
-            <!-- Add Transcript Here -->
             <p class="lead" id="transcript-text"></p>
             <hr class="my-4">
             <p class="lead text-center">
@@ -83,7 +92,7 @@
     </div>
   </div>
 
-<script src="js/audio.js"></script>
+<script src="js/audio2.js"></script>
 <script src="js/questionSelector.js"></script>
 <script src="js/animations.js"></script>
 

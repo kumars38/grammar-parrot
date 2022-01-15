@@ -1,9 +1,15 @@
+* {
+  font-family: 'Roboto Slab', serif;
+}
+
+
 h1 {
     font-size: 70px;
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
+    background-color: aliceblue;
   }
 
   
@@ -14,7 +20,7 @@ body {
   *, *:before, *:after {
     box-sizing: inherit;
   }
-  
+
   .column {
     float: left;
     width: 33.3%;
@@ -40,6 +46,7 @@ body {
   
   .container {
     padding: 0 16px;
+    background-color: aliceblue;
   }
   
   .container::after, .row::after {
@@ -91,6 +98,29 @@ body {
     }
   }
 
+li {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
 #transcript-title {
   font-size: 50px;
+}
+
+#loader {
+  width: 50px;
+  height: 50px;
+}
+
+#main-logo {
+  width: 160px;
+  height: 160px;
+}
+
+#nav-logo {
+  width: 70px;
+  height: 70px;
+}
+.info{
+  text-align: left;
 }
