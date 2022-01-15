@@ -1,10 +1,11 @@
 h1 {
-    font-size: 50px;
+    font-size: 70px;
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
   }
+
   
   html {
     box-sizing: border-box;
@@ -89,3 +90,7 @@ body {
       display: block;
     }
   }
+
+#transcript-title {
+  font-size: 50px;
+}
