@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://bootswatch.com/5/united/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Grammar Parrot</title>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary text-left mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">GrammarParrot</a>
+        <div class="text-right" id="navbarColor01">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home
+                <span class="visually-hidden">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Learn More</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1 class=" text-center mb-4">GrammarParrot</h1>
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <form class="speech-input">
+          <!-- Insert Prompt Here -->
+          <div class="text-center" id="prompt-section">
+            <h4>Here's a question to help you get started:</h4>
+            <div id="question-prompt"></div>
+          </div>
+          <div class="card text-white bg-primary text-left mb-2" id="recording-section-info">
+            <div class="card-body"></div>
+              <h3>Record Your Audio</h3>
+              <p>Record yourself speaking and press the 'Check' button to review your grammar!</p>
+            </div>  
+          </div>
+          <div class="form-group mb-2" id="recording-section-info">
+            <button type="button" class="btn btn-primary" id="record">Record</button>
+            <button type="button" class="btn btn-primary" id="stop">Stop</button>
+            <button type="button" class="btn btn-danger" id="try-again">Try Again</button>
+            <button type="button" class="btn btn-success" id="check">Check</button>
+          </div>
+        </form>
+        <div id="transcript-section"></div>
+      </div>
+    </div>
+  </div>
+
+<script src="js/audio.js"></script>
+
+</body>
+</html> 
