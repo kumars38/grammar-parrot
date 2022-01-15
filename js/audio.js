@@ -70,6 +70,7 @@ if (navigator.mediaDevices.getUserMedia) {
 
         // upload audio to AssemblyAI
         function sendData(data) {
+          document.getElementById('transcript-text').innerHTML = ``;
           var xhr=new XMLHttpRequest();
           var fd=new FormData();
           fd.append("audio_data",data, "output.wav");
@@ -108,7 +109,7 @@ if (navigator.mediaDevices.getUserMedia) {
         
         // upload transcript to GrammarBot
         function uploadTranscript(text){
-          fetch('https://https://api.grammarparrot.online/uploadTranscript?text='+text, {
+          fetch('https://api.grammarparrot.online/uploadTranscript?text='+text, {
             method: 'GET', // or 'PUT'
             })
             .then(response => response.json())
