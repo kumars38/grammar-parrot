@@ -2,6 +2,8 @@ const record = document.querySelector('#record');
 const stop = document.querySelector('#stop');
 const tryAgain = document.querySelector('#try-again');
 const check = document.querySelector('#check');
+var transcript="";
+var grammarData;
 
 stop.disabled = true;
 tryAgain.disabled = true;
@@ -20,9 +22,7 @@ if (navigator.mediaDevices.getUserMedia) {
       // start recording audio when record button is pressed
       record.onclick = function() {
         mediaRecorder.start();
-        console.log(mediaRecorder.state);
         console.log("Starting recording...");
-        record.style.background = "red";
   
         stop.disabled = false;
         tryAgain.disabled = true;
@@ -33,7 +33,6 @@ if (navigator.mediaDevices.getUserMedia) {
       // stop recording audio when stop button is pressed
       stop.onclick = function() {
         mediaRecorder.stop();
-        console.log(mediaRecorder.state);
         console.log("Stopping recording.");
         record.style.background = "";
         record.style.color = "";
@@ -41,7 +40,7 @@ if (navigator.mediaDevices.getUserMedia) {
         stop.disabled = true;
         record.disabled = true;
         tryAgain.disabled = false;
-        check.disabled = false;
+        check.disabled = true;
       }
 
       // re-enable recording option when try-again button is pressed
@@ -53,7 +52,7 @@ if (navigator.mediaDevices.getUserMedia) {
       }
 
       check.onclick = function() {
-        //TODO
+        console.log(grammarData);
       }
 
       // stream recorded audio in chunks
@@ -61,18 +60,17 @@ if (navigator.mediaDevices.getUserMedia) {
         chunks.push(e.data);
       }
 
-      // save final audio once recording has stopped
+      // once recording has stopped
       mediaRecorder.onstop = function(e) {
         // save a blob (generic) from chunks
         const blob = new Blob(chunks, {'type' : 'audio/wav'});
-        chunks = [];
+        chunks = []; // reset chunks for next recording
 
         sendData(blob);
 
+        // upload audio to AssemblyAI
         function sendData(data) {
-
           var xhr=new XMLHttpRequest();
-
           var fd=new FormData();
           fd.append("audio_data",data, "output.wav");
           xhr.open("POST","https://master-mote-338304.uc.r.appspot.com/uploadAudio",true);
@@ -83,25 +81,44 @@ if (navigator.mediaDevices.getUserMedia) {
               resultats = this.responseText;
               console.log(resultats);
               var results=JSON.parse(resultats);
-              console.log(typeof results);
+              //console.log(typeof results);
               getTranscript(results.upload_url);
             }
           }
         }
 
-        // get speech-to-text transcript using AssemblyAI API
+        // get speech-to-text transcript from AssemblyAI
         function getTranscript(url){
           fetch('https://master-mote-338304.uc.r.appspot.com/getTranscript?url='+url, {
           method: 'POST', // or 'PUT'
           })
           .then(response => response.json())
-          .then(data => {
-          console.log('Success:', data); //this data object is the returned json from assemblyAI. data.text has transcript,
-                                          //would then send to grammarapi
+          .then(
+            function(data) {
+              transcript = data.text;
+              console.log('Success, Transcript:', transcript);
+              check.disabled = false;
+              uploadTranscript(transcript);
           })
           .catch((error) => {
           console.error('Error:', error);
           });
+        }
+        
+        // upload transcript to GrammarBot
+        function uploadTranscript(text){
+          fetch('https://master-mote-338304.uc.r.appspot.com/uploadTranscript?text='+text, {
+            method: 'GET', // or 'PUT'
+            })
+            .then(response => response.json())
+            .then(
+              function(data) {
+                grammarData = data;
+                //console.log('Success, grammar check:', data); //errors = data.matches --> errors array 
+            })
+            .catch((error) => {
+            console.error('Error:', error);
+            });
         }
 
         // local download of audio file for testing:
