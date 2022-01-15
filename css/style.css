@@ -33,7 +33,7 @@ body {
   .about-section {
     padding: 30px;
     text-align: center;
-    background-color: #DEB887;
+    background-color: #9fe2c6;
     color: black;
   }
   
@@ -70,19 +70,16 @@ body {
     .box1{
     border:3px dotted #ccc;
     margin-bottom: 10px;
-    width: 1000px;
     }
 
     .box2{
     border:3px dotted #ccc;
     margin-bottom: 10px;
-    width: 1000px;
     }
 
     .box3{
     border:3px dotted #ccc;
     margin-bottom: 10px;
-    width: 1000px;
     }
 
   
