@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "category": "Food",
+        "question": "What foods do you eat most often?"
+    },
+    {
+        "id": 2,
+        "category": "Food",
+        "question": "What is your favourite food?"
+    },
+    {
+        "id": 3,
+        "category": "Food",
+        "question": "Is there any food you do not like?"
+    },
+    {
+        "id": 4,
+        "category": "Food",
+        "question": "Are there any foods you cannot eat?"
+    },
+    {
+        "id": 1,
+        "category": "Medical",
+        "question": "How often do you exercise?"
+    },
+    {
+        "id": 2,
+        "category": "Medical",
+        "question": "Do you eat lots of unhealthy foods?"
+    },
+    {
+        "id": 3,
+        "category": "Medical",
+        "question": "How do you feel?"
+    },
+    {
+        "id": 4,
+        "category": "Medical",
+        "question": "Do you take any medications?"
+    },
+    {
+        "id": 1,
+        "category": "Workplace",
+        "question": "Do you prefer to work alone or in a group?"
+    },
+    {
+        "id": 2,
+        "category": "Workplace",
+        "question": "Do you have any related work experience?"
+    },
+    {
+        "id": 3,
+        "category": "Workplace",
+        "question": "How do you get to work?"
+    },
+    {
+        "id": 4,
+        "category": "Home",
+        "question": "What are your hobbies?"
+    }
+]
