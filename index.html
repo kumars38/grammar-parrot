@@ -17,7 +17,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary text-left mb-4">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img class="topbar-logo" src="img/bird.png" alt="logo" id="nav-logo"/>GrammarParrot</a>
+      <a class="navbar-brand" href="index.html"><img class="topbar-logo" src="img/bird.png" alt="logo" id="nav-logo"/>GrammarParrot</a>
       <div class="text-right" id="navbarColor01">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
@@ -66,9 +66,7 @@
             <div class="card-body" id="card-body"></div>
               <ul class="text-left" id="card-body">
                 <li>Record yourself speaking by clicking the 'Record' button</li>
-                <li>Stop the recording by clicking 'Stop' </li>
-                <li>If you want to restart a recording, click 'Stop' then click 'Try Again'</li>
-                <li>Record yourself speaking and press the 'Check' button to review your grammar!</li>
+                <li>Stop your recording by clicking 'Stop' </li>
               </ul>
             </div>  
           </div>
@@ -78,10 +76,14 @@
           </div>
         </form>
         <div id="transcript-section">
-          <div class="jumbotron" id="jumbotron" style="display:none">
+          <div class="jumbotron" id="jumbotron"> <!-- style="display:none" ***Add back later-->
             <h1 class="display-3" id="transcript-title">Here's what you said:</h1>
             <p class="lead" id="transcript-text"></p>
             <hr class="my-4">
+            <ul>
+              <li>If you want to restart a recording, click 'Try Again'</li>
+              <li>Record yourself speaking and press the 'Check' button to review your grammar!</li>
+            </ul>
             <p class="lead text-center">
               <button type="button" class="btn btn-danger" id="try-again">Try Again</button>
               <button type="button" class="btn btn-success" id="check">Check Grammar</button>
@@ -92,7 +94,7 @@
     </div>
   </div>
 
-<script src="js/audio2.js"></script>
+<script src="js/main.js"></script>
 <script src="js/questionSelector.js"></script>
 <script src="js/animations.js"></script>
 
