@@ -38,13 +38,20 @@
             <h4>Here's a question to help you get started:</h4>
             <div id="question-prompt"></div>
           </div>
-          <div class="card text-white bg-primary text-left mb-2" id="recording-section-info">
-            <div class="card-body"></div>
+          <div class="card text-white bg-primary mb-2" id="recording-section-info">
+            <div class="card-header text-center">
               <h3>Record Your Audio</h3>
-              <p>Record yourself speaking and press the 'Check' button to review your grammar!</p>
+            </div>
+            <div class="card-body" id="card-body"></div>
+              <ul class="text-left" id="card-body">
+                <li>Record yourself speaking by clicking the 'Record' button</li>
+                <li>Stop the recording by clicking 'Stop' </li>
+                <li>If you want to restart a recording, click 'Stop' then 'Try Again' to delete</li>
+                <li>Record yourself speaking and press the 'Check' button to review your grammar!</li>
+              </ul>
             </div>  
           </div>
-          <div class="form-group mb-2" id="recording-section-info">
+          <div class="form-group text-center mb-2" id="recording-section-info">
             <button type="button" class="btn btn-primary" id="record">Record</button>
             <button type="button" class="btn btn-primary" id="stop">Stop</button>
             <button type="button" class="btn btn-danger" id="try-again">Try Again</button>
