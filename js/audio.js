@@ -5,6 +5,7 @@ const check = document.querySelector('#check');
 
 stop.disabled = true;
 tryAgain.disabled = true;
+check.disabled = true;
 
 // audio collection
 // success in obtaining user media (microphone)
@@ -26,6 +27,7 @@ if (navigator.mediaDevices.getUserMedia) {
         stop.disabled = false;
         tryAgain.disabled = true;
         record.disabled = true;
+        check.disabled = true;
       }
       
       // stop recording audio when stop button is pressed
@@ -39,10 +41,19 @@ if (navigator.mediaDevices.getUserMedia) {
         stop.disabled = true;
         record.disabled = true;
         tryAgain.disabled = false;
+        check.disabled = false;
       }
 
+      // re-enable recording option when try-again button is pressed
       tryAgain.onclick = function() {
+        stop.disabled = true;
+        record.disabled = false;
+        tryAgain.disabled = true;
+        check.disabled = true;
+      }
 
+      check.onclick = function() {
+        //TODO
       }
 
       // stream recorded audio in chunks
@@ -59,7 +70,7 @@ if (navigator.mediaDevices.getUserMedia) {
         // download link for audio
         const audioURL = URL.createObjectURL(blob);
 
-        // download audio file
+        // download audio file (testing purposes)
         var audioElem = document.createElement("a");
         document.body.appendChild(audioElem);
         audioElem.href = audioURL;
