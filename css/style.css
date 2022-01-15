@@ -67,7 +67,7 @@ body {
   .button:hover {
     background-color: #555;
   }
-
+  /*
     .box1{
     border:3px dotted #ccc;
     margin-bottom: 10px;
@@ -81,7 +81,7 @@ body {
     .box3{
     border:3px dotted #ccc;
     margin-bottom: 10px;
-    }
+    }*/
 
   
   @media screen and (max-width: 650px) {
