@@ -73,7 +73,7 @@ if (navigator.mediaDevices.getUserMedia) {
           var xhr=new XMLHttpRequest();
           var fd=new FormData();
           fd.append("audio_data",data, "output.wav");
-          xhr.open("POST","https://master-mote-338304.uc.r.appspot.com/uploadAudio",true);
+          xhr.open("POST","https://api.grammarparrot.online/uploadAudio",true);
           xhr.send(fd);
 
           xhr.onreadystatechange = function() {
@@ -89,7 +89,7 @@ if (navigator.mediaDevices.getUserMedia) {
 
         // get speech-to-text transcript from AssemblyAI
         function getTranscript(url){
-          fetch('https://master-mote-338304.uc.r.appspot.com/getTranscript?url='+url, {
+          fetch('https://api.grammarparrot.online/getTranscript?url='+url, {
           method: 'POST', // or 'PUT'
           })
           .then(response => response.json())
@@ -108,7 +108,7 @@ if (navigator.mediaDevices.getUserMedia) {
         
         // upload transcript to GrammarBot
         function uploadTranscript(text){
-          fetch('https://master-mote-338304.uc.r.appspot.com/uploadTranscript?text='+text, {
+          fetch('https://https://api.grammarparrot.online/uploadTranscript?text='+text, {
             method: 'GET', // or 'PUT'
             })
             .then(response => response.json())
