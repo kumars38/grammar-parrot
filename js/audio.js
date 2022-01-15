@@ -99,6 +99,7 @@ if (navigator.mediaDevices.getUserMedia) {
               console.log('Success, Transcript:', transcript);
               check.disabled = false;
               uploadTranscript(transcript);
+              document.getElementById('transcript-text').innerHTML = transcript;
           })
           .catch((error) => {
           console.error('Error:', error);
@@ -114,7 +115,7 @@ if (navigator.mediaDevices.getUserMedia) {
             .then(
               function(data) {
                 grammarData = data;
-                //console.log('Success, grammar check:', data); //errors = data.matches --> errors array 
+                console.log('Success, grammar check:', data); //errors = data.matches --> errors array 
             })
             .catch((error) => {
             console.error('Error:', error);
