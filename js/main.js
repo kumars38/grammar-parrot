@@ -122,6 +122,7 @@ tryAgain.onclick = function() {
   record.disabled = false;
   tryAgain.disabled = true;
   check.disabled = true;
+  document.getElementById('jumbotron').style.display === "none";
 }
 
 check.onclick = function() {
