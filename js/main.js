@@ -108,21 +108,14 @@ record.onclick = function() {
         .then(
           function(data) {
             grammarData = data;
-            console.log('Success, grammar check:', data);
-            processGrammar(data); //errors = data.matches --> errors array 
+            console.log('Success, grammar check:', grammarData);
           }
         ).catch((error) => {
           console.error('Error:', error);
         });
       }
-
-      function processGrammar(data){
-        
-      }
     }
   }
-
-
 
   // error in obtaining user media
   let blocked = function(err) {
@@ -131,6 +124,47 @@ record.onclick = function() {
 
   // prompt user, promise
   navigator.mediaDevices.getUserMedia({audio: true}).then(allowed, blocked);
+}
+
+function processGrammar(data){
+  console.log(data);
+  document.getElementById('corrections-title').innerHTML = `<b>Here's what we found:</b>`;
+  const matches = data.matches;
+  const offsets = matches.map(item => item.offset);
+  let newTranscript = '';
+  let counter = 1;
+  for (let i = 0; i < transcript.length; i++) {
+    
+    if (offsets.includes(i)){
+      newTranscript += `<sup style="color: red"><b>${counter}</b></sup>`;
+      counter++;
+    }
+    newTranscript += transcript.charAt(i);
+  }
+  document.getElementById('transcript-text').innerHTML = newTranscript;
+
+
+  let output = '';
+  let counter1 = 1;
+  matches.forEach(item => {
+    const index=item.offset;
+    const length=item.length;
+    const sentence = item.sentence;
+    const msg=item.message;
+    const shortMessage = item.shortMessage;
+    const affectedWord = transcript.substring(index,index+length);
+    //append to correction div
+    const correctionItem = `<h5><b>Error #${counter1}</b></h5>
+    <h6><b>Sentence:</b> ${sentence}</h6>
+    <h6 style="color: red"><b>Error:</b> ${affectedWord}</h6>
+    <h6><b>Issue:</b> ${shortMessage}</h6>
+    <h6 style="color: green"><b>Correction:</b> ${msg}</h6>
+    <div class="row mb-3"></div>
+    `;
+    output += correctionItem;
+    counter1++;
+  })
+  document.getElementById('corrections').innerHTML = output;
 }
 
 // re-enable recording option when try-again button is pressed
@@ -143,7 +177,7 @@ tryAgain.onclick = function() {
 }
 
 check.onclick = function() {
-  console.log(grammarData.matches);
+  processGrammar(grammarData);
 }
 
 scrollBtn.onclick = function() {
