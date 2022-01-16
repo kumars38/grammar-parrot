@@ -130,6 +130,9 @@ function processGrammar(data){
   console.log(data);
   document.getElementById('corrections-title').innerHTML = `<b>Here's what we found:</b>`;
   const matches = data.matches;
+  if (matches.length == 0) {
+    document.getElementById('corrections').innerHTML = `<h6>We didn't catch any mistakes. Congratulations!</h6>`;
+  }
   const offsets = matches.map(item => item.offset);
   let newTranscript = '';
   let counter = 1;
@@ -154,13 +157,25 @@ function processGrammar(data){
     const shortMessage = item.shortMessage;
     const affectedWord = transcript.substring(index,index+length);
     //append to correction div
-    const correctionItem = `<h5><b>Error #${counter1}</b></h5>
-    <h6><b>Sentence:</b> ${sentence}</h6>
-    <h6 style="color: red"><b>Error:</b> ${affectedWord}</h6>
-    <h6><b>Issue:</b> ${shortMessage}</h6>
-    <h6 style="color: green"><b>Correction:</b> ${msg}</h6>
-    <div class="row mb-3"></div>
-    `;
+    
+    var correctionItem="";
+    if(shortMessage !== ""){
+
+      correctionItem = `<h5><b>Error #${counter1}</b></h5>
+      <h6><b>Sentence:</b> ${sentence}</h6>
+      <h6 style="color: red"><b>Word:</b> ${affectedWord}</h6>
+      <h6><b>Issue:</b> ${shortMessage}</h6>
+      <h6 style="color: green"><b>Correction:</b> ${msg}</h6>
+      <div class="row mb-3"></div>`;
+    }
+    else{
+      correctionItem = `<h5><b>Error #${counter1}</b></h5>
+      <h6><b>Sentence:</b> ${sentence}</h6>
+      <h6 style="color: red"><b>Word:</b> ${affectedWord}</h6>
+      <h6 style="color: green"><b>Correction:</b> ${msg}</h6>
+      <div class="row mb-3"></div>`;
+    }
+  
     output += correctionItem;
     counter1++;
   })
@@ -174,6 +189,8 @@ tryAgain.onclick = function() {
   tryAgain.disabled = true;
   check.disabled = true;
   document.getElementById('jumbotron').style.display = "none";
+  document.getElementById('corrections-title').innerHTML = "";
+  document.getElementById('corrections').innerHTML = "";
 }
 
 check.onclick = function() {
