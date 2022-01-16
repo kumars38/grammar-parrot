@@ -6,6 +6,7 @@
 h1 {
     font-size: 70px;
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -20,7 +21,15 @@ body {
   *, *:before, *:after {
     box-sizing: inherit;
   }
+.card-header{
 
+  background-color: rgb(63, 135, 194);
+  color: aliceblue;
+  
+}
+.card-header h4{
+  color: aliceblue;
+}
   .column {
     float: left;
     width: 33.3%;
@@ -31,6 +40,26 @@ body {
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(70, 108, 141);
+  }
+  .bg-primary {
+    background-color: aliceblue!important;
+  }
+  .card-body{
+    background-color: aliceblue;
+    color: rgb(63, 135, 194);
+  }
+  .card-body h5{
+    color: rgb(63, 135, 194);
+    background-color: aliceblue;
+  }
+  .card-body h4{
+    color: rgb(63, 135, 194);
+    background-color: aliceblue;
+  }
+  .card-body li{
+   
   }
   
   .info{
@@ -40,7 +69,6 @@ body {
   .about-section {
     padding: 30px;
     text-align: center;
-    background-color: #9fe2c6;
     color: black;
   }
   
@@ -70,9 +98,9 @@ body {
     cursor: pointer;
     width: 100%;
   }
-  
+
   .button:hover {
-    background-color: #555;
+    background-color: rgb(206, 18, 18);
   }
   /*
     .box1{
@@ -121,11 +149,35 @@ li {
   width: 70px;
   height: 70px;
 }
+
 .info{
   text-align: left;
 }
 
 #intro-text {
   color:  #333;
-  line-height: 1.4;
+  line-height: 2.0;
+}
+
+hr.solid {
+  border-top: 3px solid black;
+}
+
+.jumbotron {
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+#scroll-button{
+  width: 200px;
+  height: 100px;
+  font-size: x-large;
+}
+
+#intro-prompt{
+  transition: opacity 1s;
+}
+
+#question-prompt{
+  font-weight: bold;
 }
