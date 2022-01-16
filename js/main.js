@@ -117,7 +117,7 @@ record.onclick = function() {
     }
   }
 
-  // error in obtaining user media
+  // error in obtaining user mediatas
   let blocked = function(err) {
     console.log("The following error occured: " + err);
   }
@@ -131,7 +131,8 @@ function processGrammar(data){
   document.getElementById('corrections-title').innerHTML = `<b>Here's what we found:</b>`;
   const matches = data.matches;
   if (matches.length == 0) {
-    document.getElementById('corrections').innerHTML = `<h6>We didn't catch any mistakes. Congratulations!</h6>`;
+    document.getElementById('corrections').innerHTML = `<p class="lead">We didn't catch any mistakes. Congratulations!</p>`;
+    return;
   }
   const offsets = matches.map(item => item.offset);
   let newTranscript = '';
