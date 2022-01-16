@@ -1,8 +1,10 @@
 # grammar-parrot
 
-<p align="center">
-	<img src="https://github.com/kumars38/grammar-parrot/blob/main/img/bird.png" width = 400px/>
-</p>
+<a href="https://grammarparrot.online/" target="_blank">
+	<p align="center" href="https://grammarparrot.online/">
+		<img src="https://github.com/kumars38/grammar-parrot/blob/main/img/bird.png" width = 400px/>
+	</p>
+</a>
 
 ## Authors
  - [Iain Slim](https://github.com/iainslim)
