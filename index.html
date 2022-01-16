@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://bootswatch.com/5/cerulean/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/cerulean/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
+    
     <link rel="icon" href="./img/bird.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <title>GrammarParrot</title>
 </head>
 <body>
@@ -40,71 +46,97 @@
     <div class="text-center">
       <h1 class=" text-center mb-4"><a><img src="img/bird.png" alt="logo" id="main-logo"/><b>GrammarParrot</b></h1>
     </div>
-  
-    <div class="row">
-      <div class="row mt-5">
+    <div class="row mt-5"></div>
+    <div class="row">      
       <div class="col-md-8 mx-auto">
         <div class="text-center mb-4">
-          <h3 id="intro-text"><b>GrammarParrot&trade;</b> is a free online tool to improve your English speaking! Simply record yourself speaking and GrammarParrot&trade; will catch any grammatical errors.</h3>
+          <h3 class="mb-4" id="intro-text"><b>GrammarParrot&trade;</b> is a free online tool to improve your English speaking! Simply record yourself speaking and GrammarParrot&trade; will catch any grammatical errors.</h3>
+        </div>
+        <div class="row mt-5"></div>
+        <div class="row mt-5"></div>
+        <p class="lead text-center">
+          <button type="button" class="btn btn-primary" id="scroll-button">Click To Start</button>
+        </p>
+        
+        <div class="row mt-5">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval=2500>
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="img/template_1.png" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="img/template_2.png" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="img/template_3.png" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
         </div>
-        <div class="row">
-          
+        <div class="row mt-5"></div>
+        <div class="row mt-5"></div>
+        <div class="row mt-5"></div>
+        <div class="row mt-5">
+          <form class="speech-input">
+            <div class="text-left" id="prompt-section">
+              <h3 class="text-center" id="intro-prompt">Here's a question to help you get started:</h3>
+              
+              <div class="card text-white bg-primary mb-3">
+                <div class="card-header"> <h4>Select a Category</h4>
+                  <select class="form-select" id="category">
+                    <option value="Food">Food</option>
+                    <option value="Workplace">Workplace</option>
+                    <option value="School">School</option>
+                    <option value="Home">Home</option>
+                    <option value="Medical">Medical</option>
+                  </select>
+                </div>
+              <div class="card-body text-primary">
+                <h5 class="card-title">Question:</h5>
+                <h4 class="card-text mb-4" id="question-prompt"></h4>
+                <button class="btn btn-primary btn-sm mb-3" type="button" id="change-question">Change Question</button>
+              </div>
+            </div>
+            <div class="card text-white bg-primary mb-3" id="recording-section-info">
+              <div class="card-header text-center">
+                <h3>Record Your Audio</h3>
+              </div>
+              <div class="card-body" id="card-body">
+                <ul class="text-left" id="card-body">
+                  <li>Record yourself speaking by clicking the 'Record' button</li>
+                  <li>Stop your recording by clicking 'Stop' </li>
+                </ul>
+              </div>
+              </div>  
+            </div>
+            <div class="form-group text-center mb-2" id="recording-section-info">
+              <button type="button" class="btn btn-primary" id="record">Record</button>
+              <button type="button" class="btn btn-primary" id="stop">Stop</button>
+            </div>
+            <div class="row mt-5" id="extra"></div>
+          </form>
         </div>
-        <form class="speech-input">
-          <div class="text-left" id="prompt-section">
-            <h4>Here's a question to help you get started:</h4>
-            <label>Category:</label>
-            <div class="input-group input-group-sm">
-              <select class="form-select form-select-sm form-control mb-3" id="category">
-                <option value="Food">Food</option>
-                <option value="Workplace">Workplace</option>
-                <option value="School">School</option>
-                <option value="Home">Home</option>
-                <option value="Medical">Medical</option>
-              </select>
-            </div>
-            <div class="mb-2" id="question-prompt"></div>
-            <button class="btn btn-outline-primary btn-sm mb-3" type="button" id="change-question">Change Question</button>
-          </div>
-          <div class="card border-primary mb-3">
-            <div class="card-header"> <h4>Select a Category</h4>
-              <select class="form-select" aria-label="Default select example">
-                <option value="Food">Food</option>
-                <option value="Workplace">Workplace</option>
-                <option value="School">School</option>
-                <option value="Home">Home</option>
-                <option value="Medical">Medical</option>
-              </select>
-            </div>
-            <div class="card-body text-primary">
-              <h5 class="card-title">Question:</h5>
-              <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
-            </div>
-          </div>
-          <div class="card text-white bg-primary mb-2" id="recording-section-info">
-            <div class="card-header text-center">
-              <h3>Record Your Audio</h3>
-            </div>
-            <div class="card-body" id="card-body"></div>
-              <ul class="text-left" id="card-body">
-                <li>Record yourself speaking by clicking the 'Record' button</li>
-                <li>Stop your recording by clicking 'Stop' </li>
-              </ul>
-            </div>  
-          </div>
-          <div class="form-group text-center mb-2" id="recording-section-info">
-            <button type="button" class="btn btn-primary" id="record">Record</button>
-            <button type="button" class="btn btn-primary" id="stop">Stop</button>
-          </div>
-        </form>
+        
         <div id="transcript-section">
           <div class="jumbotron" id="jumbotron" style="display:none"> <!-- style="display:none" ***Add back later-->
             <h1 class="display-3" id="transcript-title" style="color: #333">Here's what you said:</h1>
             <p class="lead" id="transcript-text"></p>
             <hr class="my-4">
             <ul>
-              <li>If you want to restart a recording, click 'Try Again'.</li>
+              <li>If you want to restart a recording, click 'Try Again'</li>
               <li>Press the 'Check Grammar' button to review your grammar!</li>
             </ul>
             <p class="lead text-center">
@@ -112,6 +144,7 @@
               <button type="button" class="btn btn-success" id="check">Check Grammar</button>
             </p>
           </div>
+          <div class="row mt-5"></div>
         </div>
       </div>
     </div>
