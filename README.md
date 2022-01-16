@@ -1,5 +1,8 @@
 # grammar-parrot
-![alt text](https://github.com/kumars38/grammar-parrot/img/bird.png?raw=true)
+
+<p align="center">
+	<img src="https://github.com/kumars38/grammar-parrot/blob/main/img/bird.png" width = 500px/>
+</p>
 
 ## Authors
  - [Iain Slim](https://github.com/iainslim)
