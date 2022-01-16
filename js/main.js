@@ -41,7 +41,7 @@ record.onclick = function() {
       check.disabled = true;
 
       // scroll to bottom, to view jumbotron
-      window.scrollTo(0,document.body.scrollHeight);
+      window.scrollTo(-20,document.body.scrollHeight);
     }
 
     // stream recorded audio in chunks
@@ -108,14 +108,21 @@ record.onclick = function() {
         .then(
           function(data) {
             grammarData = data;
-            console.log('Success, grammar check:', data); //errors = data.matches --> errors array 
+            console.log('Success, grammar check:', data);
+            processGrammar(data); //errors = data.matches --> errors array 
           }
         ).catch((error) => {
           console.error('Error:', error);
         });
       }
+
+      function processGrammar(data){
+        
+      }
     }
   }
+
+
 
   // error in obtaining user media
   let blocked = function(err) {
