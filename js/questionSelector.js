@@ -12,7 +12,7 @@ const changeQuestion = () => {
         let output = '';
         questionList = data.filter((question) => question.category == category);
         newQuestion = questionList[getRndInteger(0,questionList.length)];
-        output += `<h3>${newQuestion.question}</h3>`;
+        output += `${newQuestion.question}`;
         document.getElementById('question-prompt').innerHTML = output;
     })
 }

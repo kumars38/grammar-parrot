@@ -2,6 +2,10 @@ const record = document.querySelector('#record');
 const stop = document.querySelector('#stop');
 const tryAgain = document.querySelector('#try-again');
 const check = document.querySelector('#check');
+const scrollBtn = document.querySelector('#scroll-button');
+const changeQuestionBtn = document.querySelector('#change-question');
+const extra = document.querySelector('#extra');
+const introPrompt = document.querySelector('#intro-prompt');
 var transcript="";
 var grammarData;
 
@@ -12,7 +16,7 @@ check.disabled = true;
 // start recording audio when record button is pressed
 record.onclick = function() {
 
-  let onSuccess = function(stream) {
+  let allowed = function(stream) {
     const mediaRecorder = new MediaRecorder(stream);
     var chunks = [];
 
@@ -36,12 +40,13 @@ record.onclick = function() {
       tryAgain.disabled = false;
       check.disabled = true;
 
-      document.getElementById('jumbotron').scrollIntoView();
+      // scroll to bottom, to view jumbotron
+      window.scrollTo(0,document.body.scrollHeight);
     }
 
     // stream recorded audio in chunks
     mediaRecorder.ondataavailable = function(e) {
-    chunks.push(e.data);
+      chunks.push(e.data);
     }
     
     // once recording has stopped
@@ -84,6 +89,9 @@ record.onclick = function() {
             console.log('Success, Transcript:', transcript);
             check.disabled = false;
             uploadTranscript(transcript);
+            if (transcript === "") {
+              transcript = "No speech detected. Please try again.";
+            }
             document.getElementById('transcript-text').innerHTML = transcript;
         })
         .catch((error) => {
@@ -110,12 +118,12 @@ record.onclick = function() {
   }
 
   // error in obtaining user media
-  let onError = function(err) {
+  let blocked = function(err) {
     console.log("The following error occured: " + err);
   }
 
   // prompt user, promise
-  navigator.mediaDevices.getUserMedia({audio: true}).then(onSuccess, onError);
+  navigator.mediaDevices.getUserMedia({audio: true}).then(allowed, blocked);
 }
 
 // re-enable recording option when try-again button is pressed
@@ -131,8 +139,13 @@ check.onclick = function() {
   console.log(grammarData.matches);
 }
 
+scrollBtn.onclick = function() {
+  extra.scrollIntoView();
+}
 
-
+changeQuestionBtn.onclick = function() {
+  introPrompt.style.opacity = '0';
+}
 
 
 
