@@ -1,4 +1,5 @@
 # grammar-parrot
+![alt text](https://github.com/kumars38/grammar-parrot/img/bird.png?raw=true)
 
 ## Authors
  - [Iain Slim](https://github.com/iainslim)
