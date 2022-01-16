@@ -38,11 +38,14 @@
   <div class="container">
     
     <div class="text-center">
-      <h1 class=" text-center mb-4"><a><img src="img/bird.png" alt="logo" id="main-logo"/><b>GrammarParrot</b></h1>
+      <h1 class=" text-center mb-4"><a><img src="img/bird.png" alt="logo" id="main-logo"/><b>GrammarParrot&trade;</b></h1>
     </div>
   
     <div class="row">
       <div class="col-md-8 mx-auto">
+        <div class="text-center mb-4">
+          <h3 id="intro-text">GrammarParrot is a free tool that you can use to improve your English speaking! Simply record yourself speaking and GrammarParrot will catch any grammatical errors.</h3>
+        </div>
         <form class="speech-input">
           <div class="text-left" id="prompt-section">
             <h4>Here's a question to help you get started:</h4>
@@ -76,13 +79,13 @@
           </div>
         </form>
         <div id="transcript-section">
-          <div class="jumbotron" id="jumbotron"> <!-- style="display:none" ***Add back later-->
-            <h1 class="display-3" id="transcript-title">Here's what you said:</h1>
+          <div class="jumbotron" id="jumbotron" style="display:none"> <!-- style="display:none" ***Add back later-->
+            <h1 class="display-3" id="transcript-title" style="color: #333">Here's what you said:</h1>
             <p class="lead" id="transcript-text"></p>
             <hr class="my-4">
             <ul>
               <li>If you want to restart a recording, click 'Try Again'</li>
-              <li>Record yourself speaking and press the 'Check' button to review your grammar!</li>
+              <li>Record yourself speaking and press the 'Check Grammar' button to review your grammar!</li>
             </ul>
             <p class="lead text-center">
               <button type="button" class="btn btn-danger" id="try-again">Try Again</button>
