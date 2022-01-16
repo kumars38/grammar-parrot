@@ -125,7 +125,7 @@ tryAgain.onclick = function() {
 }
 
 check.onclick = function() {
-  console.log(grammarData);
+  console.log(grammarData.matches);
 }
 
 
