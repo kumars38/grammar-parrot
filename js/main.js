@@ -195,8 +195,8 @@ tryAgain.onclick = function() {
 }
 
 check.onclick = function() {
-  processGrammar(grammarData);
   check.disabled = true;
+  processGrammar(grammarData);
 }
 
 scrollBtn.onclick = function() {
