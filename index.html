@@ -42,9 +42,14 @@
     </div>
   
     <div class="row">
+      <div class="row mt-5">
       <div class="col-md-8 mx-auto">
         <div class="text-center mb-4">
-          <h3 id="intro-text"><b>GrammarParrot&trade;</b> is a free tool that you can use to improve your English speaking! Simply record yourself speaking and GrammarParrot&trade; will catch any grammatical errors.</h3>
+          <h3 id="intro-text"><b>GrammarParrot&trade;</b> is a free online tool to improve your English speaking! Simply record yourself speaking and GrammarParrot&trade; will catch any grammatical errors.</h3>
+        </div>
+        </div>
+        <div class="row">
+          
         </div>
         <form class="speech-input">
           <div class="text-left" id="prompt-section">
@@ -61,6 +66,21 @@
             </div>
             <div class="mb-2" id="question-prompt"></div>
             <button class="btn btn-outline-primary btn-sm mb-3" type="button" id="change-question">Change Question</button>
+          </div>
+          <div class="card border-primary mb-3">
+            <div class="card-header"> <h4>Select a Category</h4>
+              <select class="form-select" aria-label="Default select example">
+                <option value="Food">Food</option>
+                <option value="Workplace">Workplace</option>
+                <option value="School">School</option>
+                <option value="Home">Home</option>
+                <option value="Medical">Medical</option>
+              </select>
+            </div>
+            <div class="card-body text-primary">
+              <h5 class="card-title">Question:</h5>
+              <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
+            </div>
           </div>
           <div class="card text-white bg-primary mb-2" id="recording-section-info">
             <div class="card-header text-center">
@@ -84,8 +104,8 @@
             <p class="lead" id="transcript-text"></p>
             <hr class="my-4">
             <ul>
-              <li>If you want to restart a recording, click 'Try Again'</li>
-              <li>Record yourself speaking and press the 'Check Grammar' button to review your grammar!</li>
+              <li>If you want to restart a recording, click 'Try Again'.</li>
+              <li>Press the 'Check Grammar' button to review your grammar!</li>
             </ul>
             <p class="lead text-center">
               <button type="button" class="btn btn-danger" id="try-again">Try Again</button>

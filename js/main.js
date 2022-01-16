@@ -35,6 +35,8 @@ record.onclick = function() {
       record.disabled = true;
       tryAgain.disabled = false;
       check.disabled = true;
+
+      document.getElementById('jumbotron').scrollIntoView();
     }
 
     // stream recorded audio in chunks
@@ -122,7 +124,7 @@ tryAgain.onclick = function() {
   record.disabled = false;
   tryAgain.disabled = true;
   check.disabled = true;
-  document.getElementById('jumbotron').style.display === "none";
+  document.getElementById('jumbotron').style.display = "none";
 }
 
 check.onclick = function() {
