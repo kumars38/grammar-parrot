@@ -6,14 +6,14 @@
 	</p>
 </a>
 
+## View Site
+https://grammarparrot.online/
+
 ## Authors
  - [Iain Slim](https://github.com/iainslim)
  - [Akram Hannoufa](https://github.com/ak-hannou)
  - [Richard Park](https://github.com/parks110)
  - [Samarth Kumar](https://github.com/kumars38)
-
-## View Site
-https://grammarparrot.online/
 
 ## Inspiration
 Our idea was inspired by Duolingo. We noticed that the main component that the platform was missing was a tool for practicing your conversation skills. Upon learning about AssemblyAI's Speech-to-Text API, we decided that it might be possible to realize this idea ourselves.
