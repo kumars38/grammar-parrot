@@ -164,7 +164,7 @@ function processGrammar(data){
 
       correctionItem = `<h5><b>Error #${counter1}</b></h5>
       <h6><b>Sentence:</b> ${sentence}</h6>
-      <h6 style="color: red"><b>Word:</b> ${affectedWord}</h6>
+      <h6 style="color: red"><b>Word(s):</b> ${affectedWord}</h6>
       <h6><b>Issue:</b> ${shortMessage}</h6>
       <h6 style="color: green"><b>Correction:</b> ${msg}</h6>
       <div class="row mb-3"></div>`;
@@ -172,7 +172,7 @@ function processGrammar(data){
     else{
       correctionItem = `<h5><b>Error #${counter1}</b></h5>
       <h6><b>Sentence:</b> ${sentence}</h6>
-      <h6 style="color: red"><b>Word:</b> ${affectedWord}</h6>
+      <h6 style="color: red"><b>Word(s):</b> ${affectedWord}</h6>
       <h6 style="color: green"><b>Correction:</b> ${msg}</h6>
       <div class="row mb-3"></div>`;
     }
