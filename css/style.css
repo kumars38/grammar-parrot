@@ -104,7 +104,7 @@ li {
 }
 
 #transcript-title {
-  font-size: 50px;
+  font-size: 35px;
 }
 
 #loader {
@@ -123,4 +123,9 @@ li {
 }
 .info{
   text-align: left;
+}
+
+#intro-text {
+  color:  #333;
+  line-height: 1.4;
 }
