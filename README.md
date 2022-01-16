@@ -1,7 +1,7 @@
 # grammar-parrot
 
 <p align="center">
-	<img src="https://github.com/kumars38/grammar-parrot/blob/main/img/bird.png" width = 500px/>
+	<img src="https://github.com/kumars38/grammar-parrot/blob/main/img/bird.png" width = 400px/>
 </p>
 
 ## Authors
